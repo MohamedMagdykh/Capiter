@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from 'src/app/CapiterProject/Services/authentication.service';
 
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   title = 'Login';
   formGroup: FormGroup|any;
-  constructor(private formBuilder: FormBuilder,public toastr: ToastrService,private auth :AuthenticationService) { }
+  constructor(private formBuilder: FormBuilder,public toastr: ToastrService,private auth :AuthenticationService,public  router:  Router) { }
   
   ngOnInit(): void {
     this.createForm();
@@ -33,6 +34,7 @@ export class LoginComponent implements OnInit {
     this.auth.LogIn(post.username,post.password).subscribe(res=>
       {
         this.toastr.success("Login")
+        this.router.navigate(["/Users"]);
       
       }
       ,(err:any)=>

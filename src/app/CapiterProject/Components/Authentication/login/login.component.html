@@ -1,6 +1,6 @@
 <div class="container"> 
   <form [formGroup]="formGroup" (ngSubmit)="onSubmitLogin(formGroup.value)" class="form">
-
+    <mat-icon class="icon-user">account_circle</mat-icon>
     <mat-form-field floatLabel="never" class="form-element">
       <input type="text" matInput placeholder="Username" formControlName="username">
       <mat-error *ngIf="formGroup.controls['username'].invalid">

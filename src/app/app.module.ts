@@ -12,11 +12,13 @@ import { AngularMatrialModule } from './CapiterProject/Moduls/angular-matrial/an
 import { LoginComponent } from './CapiterProject/Components/Authentication/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersComponent } from './Capiter/Components/Authentication/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
